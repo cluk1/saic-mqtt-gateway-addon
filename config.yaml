@@ -1,0 +1,21 @@
+name: "Saic python mqtt gateway"
+description: "saicismartapi/saic-python-mqtt-gateway as homeassistant addon"
+version: "0.6.3-25"
+slug: "saic-python-mqtt-gateway"
+init: false
+arch:
+  - aarch64
+startup: services
+options:
+  saic_user: null
+  saic_password: null
+  charging_stations_json: ""
+schema:
+  saic_user: str
+  saic_password: str
+  charging_stations_json: str?
+services:
+  - mqtt:need
+map:
+  - type: homeassistant_config
+    path: /config
